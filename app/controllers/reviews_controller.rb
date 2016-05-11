@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @review = @restaurant.reviews.build(review_params)
+    @review = @restaurant.reviews.build(review_params) #build permet d associer la review au resto et inject la methode params voir live code
     @review.save
     redirect_to restaurant_path(@restaurant)
   end
