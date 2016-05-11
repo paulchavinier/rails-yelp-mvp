@@ -1,0 +1,33 @@
+<body class="text-center">
+  <h2><%= @restaurant.name %></h2>
+
+  <ul class = "list-unstyled">
+    <li>
+     <%= @restaurant.address %>
+    </li>
+        <li>
+     <%= @restaurant.phone_number %>
+    </li>
+    <li>
+     Type of food: <%= @restaurant.category %>
+    </li>
+  </ul>
+  <h3>Reviews</h3>
+  <% @restaurant.reviews.each_with_index do |review, index| %>
+  <ul class = "list-unstyled">
+    <li>
+      <%= "#{index + 1} - #{review.content}" %>
+    </li>
+  </ul>
+  <% end %>
+
+
+
+
+
+  <h4><%=link_to "back to the list", restaurants_path%></h4>
+  <h3><%=link_to "Write Your Review", new_restaurant_review_path(params[:id])%></h4>
+
+
+
+</body>

@@ -1,0 +1,14 @@
+<body class="text-center">
+  <h2>Welcome to Paris City Guide ! </h2>
+
+<% @restaurants.each do |restaurant| %>
+  <ul class = "list-unstyled">
+    <li>
+     <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </li>
+  </ul>
+  <% end %>
+  <h3><%= link_to "add a new restaurant", new_restaurant_path %></h3>
+
+</body>
+
